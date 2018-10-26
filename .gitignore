@@ -1,0 +1,5 @@
+nimgraphql
+nimcache
+*.exe
+*.swp
+test*
