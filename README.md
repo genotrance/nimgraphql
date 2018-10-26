@@ -1,6 +1,6 @@
 Nimgraphql is a [Nim](https://nim-lang.org/) wrapper for the [libgraphqlparser](https://github.com/graphql/libgraphqlparser) library.
 
-Nimgraphql is distributed as a [Nimble](https://github.com/nim-lang/nimble) package and depends on [nimgen](https://github.com/genotrance/nimgen) and [c2nim](https://github.com/nim-lang/c2nim/) to generate the wrappers. The libgraphqlparser source code is downloaded using Git so having ```git``` in the path is required.
+Nimgraphql is distributed as a [Nimble](https://github.com/nim-lang/nimble) package and depends on [nimgen](https://github.com/genotrance/nimgen) and [c2nim](https://github.com/nim-lang/c2nim/) to generate the wrappers. Python v2 is also required to generate some header files so ensure `python2` is in the path. The libgraphqlparser source code is downloaded using Git so having ```git``` in the path is required.
 
 __Installation__
 
