@@ -9,19 +9,23 @@ skipDirs = @["tests"]
 
 # Dependencies
 
-requires "nimgen >= 0.4.0"
+requires "nimgen >= 0.5.0"
 
-import distros
+var
+  name = "nimgraphql"
+  cmd = when defined(Windows): "cmd /c " else: ""
 
-var cmd = ""
-if detectOs(Windows):
-  cmd = "cmd /c "
+mkDir(name)
 
 task setup, "Checkout and generate":
-  exec cmd & "nimgen nimgraphql.cfg"
+  if gorgeEx(cmd & "nimgen").exitCode != 0:
+    withDir(".."):
+      exec "nimble install nimgen -y"
+  exec cmd & "nimgen " & name & ".cfg"
 
 before install:
   setupTask()
 
 task test, "Run tests":
-  exec "nim cpp -r tests/testgql"
+  exec "nim cpp -r tests/t" & name & ".nim"
+
